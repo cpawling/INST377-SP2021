@@ -1,2 +1,25 @@
 /* Add some css styles based on the tutorial at javascript.info: introduction to browser events
  https://javascript.info/introduction-browser-events */
+
+.images li {
+    display: inline-block;
+}
+
+body {
+    display: flex;
+    background-color:darkcyan ;
+}
+
+.carousel img {
+    display: block;
+}
+
+.carousel {
+    position: relative;
+    margin: 0 auto;
+}
+
+.arrow {
+    position: absolute;
+    
+}
