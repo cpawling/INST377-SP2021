@@ -4,12 +4,14 @@ body {
   }
   
   .carousel {
-    position: relative;
+    position: fixed;
     width: 398px;
     padding: 10px 40px;
     border: 1px solid;
     border-radius: 15px;
     background-color: darkcyan;
+    top: 35%;
+    right: 35%;
   }
   
   .carousel img {

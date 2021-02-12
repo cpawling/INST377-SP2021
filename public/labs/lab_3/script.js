@@ -1,11 +1,4 @@
 /* Put your javascript in here */ 
-/* label the images, just for convenience, to visually track them */
-let i = 1;
-for(let li of carousel.querySelectorAll('li')) {
-li.style.position = 'relative';
-li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`);
-i++;
-}
 
 /* configuration */
 let width = 130; // image width
@@ -31,3 +24,14 @@ position -= width * count;
 position = Math.max(position, -width * (listElems.length - count));
 list.style.marginLeft = position + 'px';
 };
+
+function arraysushi() {
+    const iarray = []; 
+    const images = [document.querySelector(".imagelist")]; /* UL Class not Div Class */
+    images.forEach(element => {
+        const imagesb = element.querySelector("li");
+        iarray.append(imagesb);
+    })
+    console.log("imagearray",iarray);
+}
+arraysushi()
