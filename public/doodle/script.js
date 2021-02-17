@@ -11,3 +11,5 @@ function createDoodler() {
 
 
 createDoodler()
+
+//STOPED AT 10 MIN IN VIDEO//
