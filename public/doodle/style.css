@@ -3,10 +3,11 @@
     height: 600px;
     background-color: yellow ;
     position: relative; /* when dealing with positions of things in browser */
-
+    text-align: center;
+    font-size: 200px;
 }
 
-.dooder {
+.doodler {
     width: 60px;
     height: 85px;
     background-color: red;
