@@ -6,37 +6,42 @@
   <title> Charles Pawling's Lab 5</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script
-      src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
-      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
-      crossorigin="anonymous"
-    ></script> 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""/>
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+      integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
+      crossorigin="anonymous"></script> 
 </head>
+
 <div class = "header is-size-1">
     <h1>Charles Pawling Lab 5</h1>
-  </div> 
+</div> 
 <body>
     <p> Food and Resturaunt Search by Cities</p>
-    <div id="mapid"></div>
-    <div class = "wrapper">
-        <div class = "container is-max-desktop">
+    <div class = "columns">
+        <div class = "column is-half">
           <div class="field">
     
             <div class="control">
-              <input class="input" type="text" placeholder="City">
+              <input class="input" type="text" placeholder="Zipcode">
+              <input class="button" type="submit" value="Submit">
             </div>
               <ul class="suggestions">
     
               </ul>
             </div>
         </div>
-      </div>    
+        <div class = "column is-half">
+            <div id="mapid"></div>
+        </div>
+    </div>    
     <script src="script.js">
     </script>
 </body>
