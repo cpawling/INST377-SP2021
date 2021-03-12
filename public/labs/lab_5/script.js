@@ -10,15 +10,13 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     zoomOffset: -1,
     accessToken: 'pk.eyJ1IjoiY3Bhd2luc3QiLCJhIjoiY2ttM3d0djFuMGsxbzJvbzJ6dmdnZ3hlcSJ9.kvJqb2mlSULFZ6YKqvPZCw'
 }).addTo(mymap);
+
+var marker = L.marker([51.5, -0.09]).addTo(mymap);
 console.log('mymap', mymap)
 return mymap;
 }
 
 
-async function dataHandler(mapObjectFromFunction) {
-const form = document.querySelector('#search-form');
-const search = document.querySelector('#search');
-const targetList = document.querySelector('target-list');
 
 const endpoint = 'https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json';
 
@@ -36,6 +34,8 @@ function findMatches(wordToMatch, zipcodes) {
 
 function displayMatches() {
   const matchArray = findMatches(this.value, zipcodes);
+  const topfive = filtered.slice(0, 5);
+
   const html = matchArray.map(place => {
     const regex = new RegExp(this.value, 'gi');
     const cityName = place.city;
@@ -61,17 +61,31 @@ function displayMatches() {
   }).join('');
   suggestions.innerHTML = html;
 
+  
   const searchInput = document.querySelector('.input');
   const suggestions = document.querySelector('.suggestions');
-  // use your assignment 1 data handling code here
+  
+  searchInput.addEventListener('change', displayMatches);
+  searchInput.addEventListener('keyup', displayMatches);
+};
+
+
+
+
+  async function dataHandler(mapObjectFromFunction) {
+    const form = document.querySelector('#search-form');
+    const search = document.querySelector('#search');
+    const targetList = document.querySelector('target-list');
+    
+  // use your assignment 1 data handling code h ere
   // and target mapObjectFromFunction to attach markers
-  form addEventListener('submit', async (event) => {
+  form.addEventListener('submit', async (event) => {
     targetList.innerText = '';
     event.preventDefault();
     console.log('submit activated', search.value);
     //make sure resturaunts show up on map with code - note for charles
     const filtered = data.filter((record) => record.zip.includes(search.value) && record.geocoded_column_1);
-    const topfive = filtered.slice(0, 5);
+    
     // add code for filtering top 5
 
     if (topfive.length < 1) {
@@ -82,7 +96,7 @@ function displayMatches() {
       topfive.forEach((item) => {
         const longLatitude = item.geocoded_column_1.coordinates;
         console.log('make long lat', longLatitude[0],longLatitude[1]);
-        const marker = L.marker([longLatitude[0],longLatitude[1]]).addTo(mapObjectFromFunction);
+        const marker = L.marker([longLatitude[1],longLatitude[0]]).addTo(mapObjectFromFunction);
   
       const appendItem = document.createElement('li');
       appendItem.classList.add('block');
@@ -96,7 +110,7 @@ function displayMatches() {
     }
     });
   }
-}
+
 
 
 

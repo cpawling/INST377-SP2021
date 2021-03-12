@@ -35,3 +35,15 @@ li {
 
 
 #mapid { height: 180px;}
+
+.list-header {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.list-item{
+    border-radius: 4px;
+    color: white;
+    background: orange;
+    padding: 5px;
+}

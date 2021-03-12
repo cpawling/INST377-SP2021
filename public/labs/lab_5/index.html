@@ -24,26 +24,29 @@
     <h1>Charles Pawling Lab 5</h1>
 </div> 
 <body>
-    <p> Food and Resturaunt Search by Cities</p>
-    <div class = "columns">
-        <div class = "column is-half">
-          <div class="field">
-    
-            <div class="control">
-              <input class="input" type="text" placeholder="Zipcode">
-              <input class="button" type="submit" value="Submit">
-            </div>
+  <section class ='section'>
+    <div class = "container columns is-max-widescreen">
+        <div class = "column info">
+          <div class="subtitle"> Food and Resturaunt Search By Cities </div>
+          <div class="container">
+            <form id="formElem">
+              <label for="input">Enter a Zip Code:</label>
+              <input id="input" type="text" name="Search" class="input is-rounded-is-small" placeholder="Zipcode">
+              <div class="column is-3"></div>
+              <button class ="button" type ="submit">Submit</button>
               <ul class="suggestions">
     
               </ul>
-            </div>
+            </form>
+          </div>
         </div>
-        <div class = "column is-half">
-            <div id="mapid"></div>
+        <div class = "column">
+            <div class="box" id="mapid"></div>
         </div>
-    </div>    
+        </div>    
     <script src="script.js">
     </script>
+  </section>
 </body>
 </html>
 
