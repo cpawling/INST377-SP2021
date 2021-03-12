@@ -25,12 +25,13 @@ html {
     margin-bottom: 1.5rem;
   }
 
-.box {
+.name {
     background-image: linear-gradient(orange,white)
 }
 
 li {
     margin-bottom: 40px;
+    color: black;
 }
 
 
@@ -43,7 +44,7 @@ li {
 
 .list-item{
     border-radius: 4px;
-    color: white;
+    color: orange;
     background: orange;
     padding: 5px;
 }
