@@ -11,7 +11,7 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
     accessToken: 'pk.eyJ1IjoiY3Bhd2luc3QiLCJhIjoiY2ttM3d0djFuMGsxbzJvbzJ6dmdnZ3hlcSJ9.kvJqb2mlSULFZ6YKqvPZCw'
 }).addTo(mymap);
 
-var marker = L.marker([38.9907561,-76.9384114]).addTo(mymap);
+var marker = L.marker([0,0]).addTo(mymap);
 console.log('mymap', mymap)
 
 const popup = L.popup();
